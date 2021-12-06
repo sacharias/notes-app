@@ -1,0 +1,43 @@
+GET http://localhost:3000/
+
+### REGISTER
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "email": "example@email.com",
+    "password": "secret-password"
+}
+
+### LOGIN
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "example@email.com",
+    "password": "secret-password"
+}
+
+### PROFILE
+GET http://localhost:3000/profile
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVAZW1haWwuY29tIiwidXNlcl9pZCI6OSwiaWF0IjoxNjM4NTMzMjk1LCJleHAiOjE2Mzg1NDA0OTV9.ATdz8QZlHlJ8_Mj5NNpS3x7HAZGx0hl94HuiHRF7Ecw
+
+
+### USERS
+POST http://localhost:3000/users
+
+
+### POSTS
+GET http://localhost:3000/posts
+###
+GET http://localhost:3000/posts/123
+###
+POST http://localhost:3000/posts
+###
+GET http://localhost:3000/posts
+###
+PUT http://localhost:3000/posts/123
+###
+PATCH http://localhost:3000/posts/123
+###
+DELETE http://localhost:3000/posts/123
