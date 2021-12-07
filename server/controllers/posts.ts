@@ -33,4 +33,4 @@ router.delete('/:id', (req, res) => {
     res.status(200).json({})
 })
 
-module.exports = router
+export { router as posts }
