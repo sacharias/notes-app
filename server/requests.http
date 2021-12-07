@@ -5,10 +5,9 @@ POST http://localhost:3000/register
 Content-Type: application/json
 
 {
-    "email": "example@email.com",
+    "email": "sacharias@email.com",
     "password": "secret-password"
 }
-
 ### LOGIN
 POST http://localhost:3000/login
 Content-Type: application/json
