@@ -1,34 +1,58 @@
-import express = require('express')
+import * as express from 'express'
+import { Request, Response } from 'express'
+import { getRepository, NoConnectionForRepositoryError } from 'typeorm'
+
+import { Note } from '../entity/Note'
+import { User } from '../entity/User'
+import { verifyToken } from '../middleware/auth'
+
 const router = express.Router()
 
 // Posts
-router.get('/', (req, res) => {
-    // Add author functionality
-    console.log('not implemented 3000')
-    res.status(200).json({})
+router.get('/', verifyToken, async (req: Request, res: Response) => {
+    const noteRepo = getRepository(Note)
+    const result = await noteRepo.find()
+    return res.status(200).json(result)
 })
 
-router.get('/:id', (req, res) => {
-    console.log('not implemented 2000')
-    res.status(200).json({})
+router.get('/:id', verifyToken, async (req: Request, res: Response) => {
+    const id = Number(req.params.id)
+    const noteRepo = getRepository(Note)
+    const result = await noteRepo.find({ id })
+    return res.status(200).json(result)
 })
 
-router.post('/', (req, res) => {
+router.post('/', async (req: Request, res: Response) => {
+    try {
+        const { title, content } = req.body
+    
+        const userRepo = getRepository(User)
+        const noteRepo = getRepository(Note)
+    
+        const user = await userRepo.findOne(req.user)
+    
+        const note = new Note()
+        note.title = title
+        note.content = content
+        note.views = 0
+        note.user = user
+        note.public = true
+    
+        const results = await noteRepo.save(note)
+        return res.status(201).json(results)
+    } catch (error) {
+        console.log(error)
+        return res.status(500).end()
+    }
+
+})
+
+router.put('/:id', (req: Request, res: Response) => {
     console.log('not implemented')
     res.status(200).json({})
 })
 
-router.put('/:id', (req, res) => {
-    console.log('not implemented')
-    res.status(200).json({})
-})
-
-router.patch('/:id', (req, res) => {
-    console.log('not implemented')
-    res.status(200).json({})
-})
-
-router.delete('/:id', (req, res) => {
+router.delete('/:id', (req: Request, res: Response) => {
     console.log('not implemented')
     res.status(200).json({})
 })

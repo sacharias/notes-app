@@ -39,3 +39,29 @@ x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaGFubmVzLnN
 }
 ###
 GET http://localhost:3000/profiles/2
+
+###
+X GET /notes
+X GET /notes/:id
+X POST /notes
+X PUT /notes
+X DELETE /notes/:id
+
+###
+GET http://localhost:3000/notes
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaGFubmVzLnN2ZW5zc29uQGVtYWlsLmNvbSIsInVzZXJfaWQiOjIsImlhdCI6MTYzOTA4Mzg3MywiZXhwIjoxNjM5MDkxMDczfQ.c9992Jab8j3AvdKEd0gpUJ7w50BFLtesl6nGAqPud-c
+
+###
+GET http://localhost:3000/notes/3
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaGFubmVzLnN2ZW5zc29uQGVtYWlsLmNvbSIsInVzZXJfaWQiOjIsImlhdCI6MTYzOTA4Mzg3MywiZXhwIjoxNjM5MDkxMDczfQ.c9992Jab8j3AvdKEd0gpUJ7w50BFLtesl6nGAqPud-c
+
+
+###
+POST http://localhost:3000/notes
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaGFubmVzLnN2ZW5zc29uQGVtYWlsLmNvbSIsInVzZXJfaWQiOjIsImlhdCI6MTYzOTA3MzkzNiwiZXhwIjoxNjM5MDgxMTM2fQ.UKTNt2DsUlqigYSL7_cu0A4EHzBjYTg17VLwbnF3T6k
+
+{
+    "title": "Movie land is the best",
+    "content": "I saw a movie this weekend. I can totally recommend it."
+}
