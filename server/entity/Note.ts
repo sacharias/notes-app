@@ -13,6 +13,9 @@ export class Note {
     content: string;
 
     @Column()
+    public: boolean;
+
+    @Column()
     views: number;
 
     @ManyToOne(type => User, user => user.notes)

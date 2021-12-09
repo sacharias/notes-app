@@ -33,4 +33,4 @@ router.delete('/:id', (req, res) => {
     res.status(200).json({})
 })
 
-export { router as posts }
+export { router as notesRouter }

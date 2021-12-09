@@ -1,49 +1,41 @@
-GET http://localhost:3000/
+X POST /api/users/login    Auth
+X POST /api/users          Registration
+X GET /api/user            Get current user
+X PUT /api/user            Update current user
+X GET /api/profiles/:username     auth optional
 
-### REGISTER
-POST http://localhost:3000/register
+###
+POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "email": "sachariaZ@email.com",
-    "password": "sector19992"
+    "firstName": "Johannes",
+    "lastName": "Svensson",
+    "email": "johannes.svensson@email.com",
+    "password": "johannes-secret"
 }
 
-### LOGIN
-POST http://localhost:3000/login
+###
+POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "email": "sachariaZ@email.com",
-    "password": "sector19992"
+    "email": "johannes.svensson@email.com",
+    "password": "johannes-secret"
 }
 
+###
+GET http://localhost:3000/user
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaGFubmVzLnN2ZW5zc29uQGVtYWlsLmNvbSIsInVzZXJfaWQiOjIsImlhdCI6MTYzOTA3MzkzNiwiZXhwIjoxNjM5MDgxMTM2fQ.UKTNt2DsUlqigYSL7_cu0A4EHzBjYTg17VLwbnF3T6k
 
-### PROFILE
-GET http://localhost:3000/profile
-x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhY2hhcmlhWkBlbWFpbC5jb20iLCJ1c2VyX2lkIjo2LCJpYXQiOjE2Mzg5MDMxNjcsImV4cCI6MTYzODkxMDM2N30.krTdgt9zYyJzfi2I3aPI0z_34Gej6njHTXOsaDWJhic
-
-### USERS
-POST http://localhost:3000/posts
-x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhY2hhcmlhWkBlbWFpbC5jb20iLCJ1c2VyX2lkIjo2LCJpYXQiOjE2Mzg5MDMxNjcsImV4cCI6MTYzODkxMDM2N30.krTdgt9zYyJzfi2I3aPI0z_34Gej6njHTXOsaDWJhic
+###
+PUT http://localhost:3000/user
 Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaGFubmVzLnN2ZW5zc29uQGVtYWlsLmNvbSIsInVzZXJfaWQiOjIsImlhdCI6MTYzOTA3MzkzNiwiZXhwIjoxNjM5MDgxMTM2fQ.UKTNt2DsUlqigYSL7_cu0A4EHzBjYTg17VLwbnF3T6k
 
 {
-    "title": "This is a great title",
-    "content": "This is the great note"
+    "firstName": "Emilia",
+    "lastName": "Fredriksson"
 }
-### POSTS
-GET http://localhost:3000/posts
-
 ###
-GET http://localhost:3000/posts/123
-###
-POST http://localhost:3000/posts
-###
-GET http://localhost:3000/posts
-###
-PUT http://localhost:3000/posts/123
-###
-PATCH http://localhost:3000/posts/123
-###
-DELETE http://localhost:3000/posts/123
+GET http://localhost:3000/profiles/2
