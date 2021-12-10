@@ -47,9 +47,16 @@ router.post('/', async (req: Request, res: Response) => {
 
 })
 
-router.put('/:id', (req: Request, res: Response) => {
-    console.log('not implemented')
-    res.status(200).json({})
+router.put('/:id', verifyToken, async (req: Request, res: Response) => {
+    const id = Number(req.params.id)
+    const { title, content } = req.body
+
+    const userRepo = getRepository(User)
+    const user = await userRepo.findOne(req.user)
+    console.log(user)
+    return res.status(404).end()
+    // const noteRepo = getRepository(Note)
+    // const note = await noteRepo()
 })
 
 router.delete('/:id', (req: Request, res: Response) => {

@@ -53,13 +53,22 @@ x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaGFubmVzLnN
 
 ###
 GET http://localhost:3000/notes/3
-x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaGFubmVzLnN2ZW5zc29uQGVtYWlsLmNvbSIsInVzZXJfaWQiOjIsImlhdCI6MTYzOTA4Mzg3MywiZXhwIjoxNjM5MDkxMDczfQ.c9992Jab8j3AvdKEd0gpUJ7w50BFLtesl6nGAqPud-c
-
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaGFubmVzLnN2ZW5zc29uQGVtYWlsLmNvbSIsInVzZXJfaWQiOjIsImlhdCI6MTYzOTExNjIzNywiZXhwIjoxNjM5MTIzNDM3fQ.V7iBlaqN3OtWmKfmaFR0pU0tZiZz_FmiJHC0MIzySqs
 
 ###
 POST http://localhost:3000/notes
 Content-Type: application/json
 x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaGFubmVzLnN2ZW5zc29uQGVtYWlsLmNvbSIsInVzZXJfaWQiOjIsImlhdCI6MTYzOTA3MzkzNiwiZXhwIjoxNjM5MDgxMTM2fQ.UKTNt2DsUlqigYSL7_cu0A4EHzBjYTg17VLwbnF3T6k
+
+{
+    "title": "Movie land is the best",
+    "content": "I saw a movie this weekend. I can totally recommend it."
+}
+
+###
+PUT http://localhost:3000/notes/2
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaGFubmVzLnN2ZW5zc29uQGVtYWlsLmNvbSIsInVzZXJfaWQiOjIsImlhdCI6MTYzOTExNjIzNywiZXhwIjoxNjM5MTIzNDM3fQ.V7iBlaqN3OtWmKfmaFR0pU0tZiZz_FmiJHC0MIzySqs
 
 {
     "title": "Movie land is the best",
